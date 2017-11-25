@@ -14,7 +14,7 @@ return array(
      */
     'UCloud' => array(
         //对应的文件路径
-        'host' => 'http://localhost/PhalApi/Public/upload'
+        'host' => 'http://localhost/phalapi/public/upload'
     ),
 
     /**

@@ -19,7 +19,7 @@
      */
     'UCloud' => array(
         //对应的文件路径
-        'host' => 'http://localhost/PhalApi/Public/upload'
+        'host' => 'http://localhost/phalapi/public/upload'
     ),
 ```
 2. 云图片上传配置：
@@ -50,7 +50,7 @@
 在/path/to/phalapi/config/di.php文件中，注册：  
 ```php
 $di->ucloud = function() {
-    return new \PhalApi\Ucloud\Lite();
+    return new \PhalApi\UCloud\Lite();
 };
 ```
 
@@ -58,7 +58,7 @@ $di->ucloud = function() {
 先简单写个测试文件：
 ```php
 <html>
-    <form method="POST" action="./?service=Upload.upload" enctype="multipart/form-data">
+    <form method="POST" action="./?s=App.Upload.Go" enctype="multipart/form-data">
         <input type="file" name="file">
         <input type="submit">
     </form>
@@ -117,7 +117,7 @@ class Upload extends Api {
         \PhalApi\DI()->ucloud->set('file_name', 'avatar');
 
         //上传表单名
-        $res = \PhalApi\DI()->ucloud->upfile($this->file);
+        $rs = \PhalApi\DI()->ucloud->upfile($this->file);
 
         return $rs;
     }
@@ -126,4 +126,4 @@ class Upload extends Api {
 ```
 3. 设置上传路径
 
-按照以上设置，将会自动生成4层目录(demo/2015/13/7/aaa.jpg)，demo其实为项目名称，你可以在每个项目入口设置一个常量等于项目名称，然后打开拓展library/UCloud/Lite.php找到$default_path，将该值设置为你设定的常量，或者为空（不是NULL），为空后你可以在设置上传路径里面设置（项目名/2015/12/07）也是可以的!
+按照以上设置，将会自动生成4层目录(demo/2015/13/7/aaa.jpg)，demo其实为项目名称，你可以在每个项目入口设置一个常量等于项目名称，然后打开拓展vendor\phalapi\ucloud\src\Lite.php找到$default_path，将该值设置为你设定的常量，或者为空（不是NULL），为空后你可以在设置上传路径里面设置（项目名/2015/12/07）也是可以的!
