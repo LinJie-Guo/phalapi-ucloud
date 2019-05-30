@@ -13,7 +13,7 @@ class Local{
      * 上传文件根目录
      * @var string
      */
-    private $rootPath = '../public/upload/';
+    private $rootPath = '';
 
     /**
      * 本地上传错误信息
