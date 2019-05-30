@@ -119,7 +119,7 @@ class Lite {
             return false;
         } else {
 
-            $fileName = '/' . $this->file_name;
+            $fileName = '/' . $this->save_path . '/' . $this->file_name;
             $fileUrl = $config['host'] . '/' . $fileName;
 
             \PhalApi\DI()->logger->debug('succeed to upload file to '.$engine, $fileUrl);
