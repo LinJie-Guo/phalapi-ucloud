@@ -37,7 +37,7 @@ class Lite {
     private $upload_file;
 
     //文件存储的默认路径
-    private $default_path = 'demo';
+    // private $default_path = 'demo';
 
     //文件存储路径
     private $save_path;
@@ -152,10 +152,11 @@ class Lite {
      * 设置文件存储路径
      */
     private function setPath(){
+        $rootPath = $this->config['root_path'] ?? 'demo';
         if($this->save_path)
-            return $this->default_path . '/' . $this->save_path;
+            return $rootPath . '/' . $this->save_path;
         else
-            return $this->default_path;
+            return $rootPath;
     }
 
     /**
