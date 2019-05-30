@@ -1,5 +1,5 @@
 {
-    "name": "phalapi/ucloud",
+    "name": "phalapi/ucloudV2",
     "description": "PhalApi 2.x 扩展类库 - 图片上传",
     "keywords": [
         "phalapi", "phalapi-ucloud", "ucloud"
