@@ -1,7 +1,7 @@
 <?php
 /*
  * +----------------------------------------------------------------------
- * | 图片服务器上传接口1
+ * | 图片服务器上传接口
  * +----------------------------------------------------------------------
  * | Copyright (c) 2015 summer All rights reserved.
  * +----------------------------------------------------------------------
@@ -119,7 +119,7 @@ class Lite {
             return false;
         } else {
 
-            $fileName = '/' . $this->save_path . '/' . $this->file_name;
+            $fileName = $this->save_path . '/' . $this->file_name;
             $fileUrl = $config['host'] . '/' . $fileName;
 
             \PhalApi\DI()->logger->debug('succeed to upload file to '.$engine, $fileUrl);
